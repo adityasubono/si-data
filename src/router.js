@@ -7,7 +7,7 @@ import {Route, Switch} from 'react-router-dom';
 import Container from './component/layout/layout';
 import './index.css';
 
-const UserPage = lazy(() => import('./pages/user-page'));
+const UserPage = lazy(() => import('./pages/UserPage'));
 
 
 const AppIndex = () => {

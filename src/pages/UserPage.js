@@ -3,62 +3,42 @@ import UserTable from "../tables/UserTable";
 import AddUserForm from "../form/AddUserForm";
 import EditUserForm from "../form/EditUserForm";
 
-const PlayerPage = () => {
+const UserPage = () => {
 
-    const playerData = [
+    const usersData = [
         {
             id: 1,
-            fullname: 'Aditya Nugroho Subono',
-            placeofbirth: 'Balikpapan',
-            dateofbirth: '11 Mei 2021',
-            nationality: 'Indonesia',
-            club: 'Madura United',
-            position: 'Gelandang Serang',
-            number: '11',
-            weight: '170 cm'
+            name: 'Craig',
+            username: 'siliconeidolon'
+        },
+        {
+            id: 2,
+            name: 'Craig',
+            username: 'siliconeidolon'
+        },
+        {
+            id: 3,
+            name: 'Ben',
+            username: 'benisphere'
         },
     ]
 
 
-    const [users, setUsers] = useState(playerData)
+    const [users, setUsers] = useState(usersData)
 
     const addUser = (user) => {
         user.id = users.length + 1
         setUsers([...users, user])
     }
 
-    const [players, setPlayers] = useState(playerData)
-    const addPlayer = (player) => {
-        player.id = players.length + 1
-        setUsers([...users, player])
-    }
-
     const deleteUser = (id) => {
         setUsers(users.filter((user) => user.id !== id))
     }
 
-    const deletePlayer = (id) => {
-        setPlayers(players.filter((player) => player.id !== id))
-    }
-
     const [editing, setEditing] = useState(false)
-    const [editPlayer, setEditPlayer] = useState(false)
 
     const initialFormState = {id: null, name: '', username: ''}
-    const initialFormStatePlayer = {
-        id: null,
-        fullname: '',
-        placeofbirth: '',
-        dateofbirth: '',
-        nationality: '',
-        club: '',
-        position: '',
-        number: '',
-        weight: ''
-    }
-
     const [currentUser, setCurrentUser] = useState(initialFormState)
-    const [currentPlayer, setCurrenPlayer] = useState(initialFormStatePlayer)
     const editRow = (user) => {
         setEditing(true)
 
@@ -74,7 +54,7 @@ const PlayerPage = () => {
     return (
 
         <div className="container">
-            <h1>Sistem Pendataan Pemain Bola</h1>
+            <h1>User Data</h1>
             <div className="row">
                 <div className="col-6">
                     <div className="flex-large">
@@ -105,4 +85,4 @@ const PlayerPage = () => {
 }
 
 
-export default PlayerPage;
+export default UserPage;

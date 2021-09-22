@@ -1,10 +1,11 @@
 import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import 'font-awesome/css/font-awesome.min.css';
 import Layout from "./component/layout/layout";
 import {Route} from "react-router-dom";
 import HomePage from "./pages/home-page";
-import UserPage from "./pages/user-page";
-import PlayerPage from "./pages/player-page";
+import UserPage from "./pages/UserPage";
+import PlayerPage from "./pages/PlayerPage";
 import $ from 'jquery';
 
 const App = () => {
